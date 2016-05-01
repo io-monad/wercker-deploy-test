@@ -1,0 +1,30 @@
+box: node:5.11.0
+build:
+  steps:
+    - npm-install
+
+    - script:
+        name: test
+        code: |
+          echo "# ls -la node_modules/.bin"
+          ls -la node_modules/.bin
+          echo "# gulp --version"
+          gulp --version
+          echo "-> Exited with code $?"
+          echo "# gulp hello"
+          gulp hello
+          echo "-> Exited with code $?"
+
+deploy:
+  steps:
+    - script:
+        name: test
+        code: |
+          echo "# ls -la node_modules/.bin"
+          ls -la node_modules/.bin
+          echo "# gulp --version"
+          gulp --version
+          echo "-> Exited with code $?"
+          echo "# gulp hello"
+          gulp hello
+          echo "-> Exited with code $?"

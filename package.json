@@ -1,0 +1,15 @@
+{
+  "name": "wercker-deploy-test",
+  "version": "1.0.0",
+  "description": "Test project for deployment on wercker",
+  "main": "index.js",
+  "scripts": {
+    "test": "true"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
