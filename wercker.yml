@@ -8,11 +8,11 @@ build:
         code: |
           echo "# ls -la node_modules/.bin"
           ls -la node_modules/.bin
-          echo "# gulp --version"
-          gulp --version
+          echo "# node_modules/.bin/gulp --version"
+          node_modules/.bin/gulp --version
           echo "-> Exited with code $?"
-          echo "# gulp hello"
-          gulp hello
+          echo "# node_modules/.bin/gulp hello"
+          node_modules/.bin/gulp hello
           echo "-> Exited with code $?"
 
 deploy:
@@ -22,9 +22,9 @@ deploy:
         code: |
           echo "# ls -la node_modules/.bin"
           ls -la node_modules/.bin
-          echo "# gulp --version"
-          gulp --version
+          echo "# node_modules/.bin/gulp --version"
+          node_modules/.bin/gulp --version
           echo "-> Exited with code $?"
-          echo "# gulp hello"
-          gulp hello
+          echo "# node_modules/.bin/gulp hello"
+          node_modules/.bin/gulp hello
           echo "-> Exited with code $?"
