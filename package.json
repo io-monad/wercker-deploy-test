@@ -4,7 +4,8 @@
   "description": "Test project for deployment on wercker",
   "main": "index.js",
   "scripts": {
-    "test": "true"
+    "test": "true",
+    "hello": "gulp hello"
   },
   "keywords": [],
   "author": "",
