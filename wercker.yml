@@ -6,6 +6,12 @@ build:
     - script:
         name: test
         code: |
+          echo "# pwd"
+          pwd
+
+          echo "# ls -la ."
+          ls -la .
+
           echo "# ls -la node_modules/.bin"
           ls -la node_modules/.bin
 
@@ -21,11 +27,22 @@ build:
           npm run hello
           echo "-> Exited with code $?"
 
+    - script:
+        name: Copy node_modules to WERCKER_OUTPUT_DIR
+        code: |
+          cp -r node_modules $WERCKER_OUTPUT_DIR/
+
 deploy:
   steps:
     - script:
         name: test
         code: |
+          echo "# pwd"
+          pwd
+
+          echo "# ls -la ."
+          ls -la .
+
           echo "# ls -la node_modules/.bin"
           ls -la node_modules/.bin
 
