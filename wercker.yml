@@ -30,39 +30,21 @@ build:
     - script:
         name: Copy files to WERCKER_OUTPUT_DIR
         code: |
+          echo "# cp -a * $WERCKER_OUTPUT_DIR/"
           cp -a * $WERCKER_OUTPUT_DIR/
+          echo "-> Exited with code $?"
+
+          echo "# ls -la $WERCKER_OUTPUT_DIR/"
+          ls -la $WERCKER_OUTPUT_DIR
+
+          echo "# ls -la $WERCKER_OUTPUT_DIR/node_modules/.bin"
+          ls -la $WERCKER_OUTPUT_DIR/node_modules/.bin
 
 deploy:
   steps:
     - script:
-        name: test on WERCKER_ROOT
+        name: test
         code: |
-          echo "# pwd"
-          pwd
-
-          echo "# ls -la ."
-          ls -la .
-
-          echo "# ls -la node_modules/.bin"
-          ls -la node_modules/.bin
-
-          echo "# node_modules/.bin/gulp --version"
-          node_modules/.bin/gulp --version
-          echo "-> Exited with code $?"
-
-          echo "# node_modules/.bin/gulp hello"
-          node_modules/.bin/gulp hello
-          echo "-> Exited with code $?"
-
-          echo "# npm run hello"
-          npm run hello
-          echo "-> Exited with code $?"
-
-    - script:
-        name: test on WERCKER_OUTPUT_DIR
-        code: |
-          cd $WERCKER_OUTPUT_DIR
-
           echo "# pwd"
           pwd
 
