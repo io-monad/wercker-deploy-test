@@ -27,21 +27,12 @@ build:
           npm run hello
           echo "-> Exited with code $?"
 
-    - script:
-        name: Copy files to WERCKER_OUTPUT_DIR
-        code: |
-          echo "# cp -a * $WERCKER_OUTPUT_DIR/"
-          cp -a * $WERCKER_OUTPUT_DIR/
-          echo "-> Exited with code $?"
-
-          echo "# ls -la $WERCKER_OUTPUT_DIR/"
-          ls -la $WERCKER_OUTPUT_DIR
-
-          echo "# ls -la $WERCKER_OUTPUT_DIR/node_modules/.bin"
-          ls -la $WERCKER_OUTPUT_DIR/node_modules/.bin
-
 deploy:
   steps:
+    - script:
+        name: npm rebuild
+        code: npm rebuild
+
     - script:
         name: test
         code: |
